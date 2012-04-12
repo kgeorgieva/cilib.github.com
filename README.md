@@ -42,7 +42,7 @@ Install Jekyll using gem:
 ## Building and Viewing ##
 cd into the `cilib.github.com` repository directory and build using:
 
-    jekyll --server
+    rake preview
 
 The generated site is available at `http://localhost:4000`
 
