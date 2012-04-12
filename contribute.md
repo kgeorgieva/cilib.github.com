@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: contribute
 title: "Contribute"
 description: "Community driven documentation"
 group: navigation
