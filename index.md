@@ -5,6 +5,9 @@ tagline: A library for Computational Intelligence
 ---
 {% include JB/setup %}
 
+<div class="row" markdown="1">
+<div class="span8">
+
 ### Project information:
 
 CIlib is a library of different computational intelligence algorithms and supporting APIs, supporting
@@ -24,6 +27,20 @@ different paradigms (some are still in _very_ active development):
 The library is designed to be as extensible as possible so that
 different types of algorithms may be used, with very little
 required configuration.
+
+</div>
+<div class="span4">
+
+![Build status](https://secure.travis-ci.org/cilib/cilib.png)
+
+### News:
+
+{% for post in site.posts limit: 10 %}
+- [{{post.title}}]({{ post.url }})
+{% endfor %}
+
+</div>
+</div>
 
 <!--
 Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
