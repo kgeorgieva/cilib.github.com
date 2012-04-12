@@ -12,8 +12,8 @@ pygments: true
 title : CIlib
 tagline:
 author :
-  name : Name Lastname
-  email : blah@email.test
+  name : CIRG
+  email : cirg@cs.up.ac.za
   github : username
   twitter : username
   feedburner : feedname
