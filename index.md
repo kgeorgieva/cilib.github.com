@@ -1,10 +1,31 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: CIlib
+tagline: A library for Computational Intelligence
 ---
 {% include JB/setup %}
 
+### Project information:
+
+CIlib is a library of different computational intelligence algorithms and supporting APIs, supporting
+different paradigms (some are still in _very_ active development):
+
+* Swarm Intelligence (including):
+  - Particle Swarm Optimization
+  - Bee Colony Optimization, and more
+* Evolutionary Computation (including):
+  - Genetic Algorithms
+  - Evolutionary Programming
+  - Evolutionary Strategies
+  - Genetic Programming, and more
+* Neural Networks
+* Game Playing
+
+The library is designed to be as extensible as possible so that
+different types of algorithms may be used, with very little
+required configuration.
+
+<!--
 Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
 
 Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
@@ -43,4 +64,4 @@ Here's a sample "posts list".
 This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
 We need to clean up the themes, make theme usage guides with theme-specific markup examples.
 
-
+-->
