@@ -22,11 +22,13 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
   -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
   </head>
 
   <body>
 
-    <div class="navbar">
+    <!--<div class="navbar">
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
@@ -37,7 +39,8 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
+    {% include navbar.txt %}
 
     <div class="container">
 

@@ -1,0 +1,21 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+      <ul class="nav">
+        {% assign pages_list = site.pages %}
+        {% assign group = 'navigation' %}
+        {% include JB/pages_list %}
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Guides<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">User</a></li>
+            <li><a href="#">Developer</a></li>
+            <li><a href="#">Cookbook</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
