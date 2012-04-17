@@ -23,8 +23,8 @@ to know the current "scope". This mutable state results is utter havoc with
 concurrent usage of the domain parser. Two possible fixes could be applied to
 resolve this issue:
 
-1. Re-create the parser each time and makes sure that each thread has its own
-   copy.
+1. Re-create the parser each time, ensuring that each thread has its own
+   instance.
 2. Make the parser stateless.
 
 Option (1) seems reasonable but has a massive amount of effort for very little
