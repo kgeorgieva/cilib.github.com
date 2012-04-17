@@ -4,7 +4,6 @@ title: "Recent changes in master"
 description: ""
 category: updates
 tags: [code, master, changes]
-post_author: filinep
 ---
 {% include JB/setup %}
 
