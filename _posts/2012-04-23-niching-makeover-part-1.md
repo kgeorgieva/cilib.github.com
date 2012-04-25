@@ -13,8 +13,8 @@ ones will explain the changes and how to use them.
 ### Going Functional
 
 A functional approach has been taken with regards to the refactor. This means that
-instead of objects being changed in place (e.g. `particle.setCandidateSolution()`)
-functions are used to create new objects with the changes in place. Currently, CIlib 
+instead of objects being changed in place (e.g. `particle.setCandidateSolution(newSolution)`)
+functions are used to create new objects with the changes in place. Currently CIlib 
 is not completely set up for this so to emulate it first clone the object then make 
 the changes to the cloned object.
 
@@ -53,6 +53,10 @@ Functional Java (FJ), was used to implement the changes.
             }
         }
 
+    and to call it for a particular particle
+
+        solution.f(particularParticle)
+
 * #### Tuple/Product:
     A tuple is a collection of heterogeneous data. It allows functions to return 
     more than one result. Using a similar naming convention to functions, FJ's 
@@ -63,7 +67,7 @@ Functional Java (FJ), was used to implement the changes.
         ...
         P8<A, B, C, D, E, F, G, H>
 
-    to create a tuple use the static method `P.p(...)` e.g. to create a tuple of a
+    To create a tuple use the static method `P.p(...)` e.g. to create a tuple of a
     particle with an associated score use 
 
         P2<Particle, Double> x = P.p(particle, score)
@@ -75,7 +79,7 @@ Functional Java (FJ), was used to implement the changes.
         Double score = x._2()
 
 * #### Lists:
-    Lists in FJ have far more functionality (no pun intended) thas Java's collections.
+    Lists in FJ have far more functionality (no pun intended) than Java's collections.
     Here are a few operations that can be performed on them that apply the functional
     paradigm.
 
@@ -94,18 +98,17 @@ Functional Java (FJ), was used to implement the changes.
 
     The contents of `output` is `[false, false, true]`
 
-    -- **filter/removeAll**: given a `List<A>`, `l`,  and a function `F<A, Boolean>`, `f`,
-    `l.filter(f)` returns a list of all the elements in `l` which when `f` is applied
-    return `true`. Similarly, `l.removeAll(f)` returns a list for which the result of `f`
-    is `false`. Note that the input of the function, `A`, is the same type as the
-    contents of the list.
+    -- **filter/removeAll**: given a `List<A>`, `l`,  and a function `F<A, Boolean>`, 
+    `f`, `l.filter(f)` returns a list of all the elements in `l` which, when `f` 
+    is applied to the element, returns `true`. Similarly, `l.removeAll(f)` 
+    returns a list for which the result of `f` is `false`. Note that the input of 
+    the function, `A`, is the same type as the contents of the list.
 
-    -- **foldLeft**: given a `List<A>`, `l`, a function `F2<B, A, B>`, `f`, and an
-    `A`, `a`, `l.foldLeft(f, a)` will calculate `f` to the `a` and the first element
-    of `l` which results in a `B`. That result is then applied with the next element 
-    of `l` on `f` and so on until the list is exhausted. This operation is also known 
-    as reduce in other langueages/frameworks because it reduces a list of elements to
-    one value.
+    -- **foldLeft**: given `List<A> l; F2<B, A, B> f; A a`, `l.foldLeft(f, a)` 
+    will apply `f` to `a` and the first element of `l` which results in a `B`. 
+    `f` is the applied to that result and the next element of `l` and so on until 
+    the list is exhausted. This operation is also known as reduce in other 
+    langueages/frameworks because it reduces a list of elements to one value.
 
     -- **head/tail**: `head` returns the first element of the list and `tail` returns
     a new list containing every element except the `head` of the list. Similarly `last`
@@ -145,9 +148,13 @@ serve as the input for another function like the following
 Here `solution` is composed with `fitnessThreshold`. An algorithm from the list 
 is passed to `solution` which returns an `OptimisationSolution` which gets passed
 to `fitnessThreshold(0.5)` which determines if the solution is less than 0.5.
-The result is a list algorithms whose best solution is less than 0.5. If one 
+The result is a list of algorithms whose best solution is less than 0.5. If one 
 forgets most of their grammar rules it almost reads like English :)
 
 One thing most people will notice is that the specification can get very verbose.
 This is a consequence of using Java and its generics and not of functional 
 programming itself e.g. Scala can condense the above to one line per function.
+
+#### What's next?
+
+In the next post the niching functions and structures will be introduced.
