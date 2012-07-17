@@ -16,8 +16,8 @@ a good step forward for our CIlib documentation effort. As a teaser of the formu
 be available, the standard PSO velocity update equation is given below (this includes the
 inertia component):
 
-<div>
-$$ v_{ij}(t+1) = w_i v_{ij}(t) + r_1 c_1 (y_{ij}(t) - x_{ij}(t)) + r_2 c_2 (\hat{y}_{j}(t) - x_{ij}(t)) $$
-</div>
+{% math %}
+v_{ij}(t+1) = w_i v_{ij}(t) + r_1 c_1 (y_{ij}(t) - x_{ij}(t)) + r_2 c_2 (\hat{y}_{j}(t) - x_{ij}(t))
+{% endmath %}
 
 This should provide us with better tools going forward :)

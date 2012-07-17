@@ -3,7 +3,8 @@
 This repository maintains the source for the CIlib website.
 
 ## Contributing ##
-....
+Please feel free to fork this repo and help us add content by sending
+us a pull request.
 
 ## Dependencies ##
 To generate and view the website locally, [Jekyll](http://jekyllrb.com) is
@@ -47,7 +48,14 @@ cd into the `cilib.github.com` repository directory and build using:
 The generated site is available at `http://localhost:4000`
 
 ## Markdown ##
-As per the default used by Jekyll, this site uses [Maruku](http://maruku.rubyforge.org/maruku.html) extensions.
+This site uses the RDiscount markdown engine, which is an alternate engine
+for jekyll. The maruku engine seems to have problems when embedding content,
+such as some Github gists.
+
+For this reason, it is necessary that you also install the RDiscount gem
+for ruby:
+
+    gem install rdiscount
 
 ## License ##
 ...
