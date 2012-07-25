@@ -8,8 +8,8 @@ tags: []
 {% include JB/setup %}
 
 This is a step-by-step guide to using Netbeans as your IDE for developing CIlib.
-It is assumed that SBT 0.11.3 and Netbeans 7.1 are installed and that the latest
-CIlib source code has been retrieved.
+It is assumed that SBT 0.11.3, Scala 2.9.1 or later, and Netbeans 7.1 are installed 
+and that the latest CIlib source code has been retrieved.
 
 
 ### Step 1: Get the Netbeans Scala plugin
@@ -17,7 +17,7 @@ CIlib source code has been retrieved.
 The nb-scala plugin is needed for Netbeans to work with Scala and SBT projects.
 The following steps will install nb-scala:
 
-- Download the correct version from here[http://sourceforge.net/projects/erlybird/files/nb-scala/]
+- Download the correct version from [here](http://sourceforge.net/projects/erlybird/files/nb-scala/)
 - Extract the compressed archive somewhere on your hard drive (remember the location)
 - In Netbeans click on `Tools` -> `Plugins`
 - At the top, click on the `Downloaded` tab
