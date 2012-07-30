@@ -13,7 +13,7 @@ der Merwe 2003. Note that the entity used is called a ClusterParticle and this
 entity holds a set of centroids, so the "dimension" of the particle refers to the 
 position of a centroid.
 
-# Algorithms implemented
+# Available Algorithm Configurations
 
 - Standard Clustering PSO: This is a PSO where particles represent sets of cluster 
 centroids. Fitness is measured using the quantization error, which measures the 
@@ -47,9 +47,9 @@ Cluster Particle, i.e. each centroid, is a separate swarm. Each swarm is optimiz
 multi-swarm algorithm and fitness is calculated using a context particle that contains the best
 positions of each swarm.
 
-# New Implementation details
+# Implementation Details
 
-## Standard PSO
+## Standard Data Clustering PSO
 - ClusterCentroid: a Type that represents a centroid. What makes it different from a vector is 
 the fact that it holds a set of data patterns which are assigned to the cluster during the 
 algorithms execution.
@@ -63,7 +63,7 @@ correctly.
 appropriately using the delegate InitializationStrategy.  If the delegate is chosen to be 
 RandomBoundedInitializationStrategy, sets the bounds for each dimension to the bouds of the dataset.
 
-- DataPattenInitializationStrategy: an initialization strategy which initializes particles to 
+- DataPatternInitializationStrategy: an initialization strategy which initializes particles to 
 positions of randomly selected patterns.
 
 - QuantizationErrorMinimizationProblem: the Quantization Error problem, where the result for a fitness
@@ -82,7 +82,7 @@ dataset required by the entity initialization strategy.
 
 - StandardDataClusteringIterationStrategy: The iteration strategy of the standard clustering PSO.
 
-## Re-initializing PSO
+## Re-initializing Data Clustering PSO
 
 - ReinitializingDataClusteringIterationStrategy: The iteration strategy which re-initializes 
 particles after a change has occurred. 
@@ -90,7 +90,7 @@ particles after a change has occurred.
 - SinglePopulationDataClusteringAlgorithm: The parent class of the 
 ReinitializingDataClusteringIterationStrategy and the StandardDataClusteringIterationStrategy
 
-## Multi-swarm PSO
+## Multi-swarm Data Clustering PSO
 
 - ClusteringMultiSwarmIterationStrategy: The multi-swarm iteration strategy designed to handle
 a clustering problem where the solution is a CentroidHolder, not a Vector. 
@@ -106,7 +106,7 @@ It is a wrapper to the CooperativeDataClusteringPSOIterationStrategy which re-in
 population once a change is detected. This did not work well at all. 
 
 
-## Cooperative Multi-swarm PSO
+## Cooperative Multi-swarm Data Clustering PSO
 
 - AbstractCooperativeIterationStrategy: This class was created as a parent to hold the co-operative
  PSO functionality that both, the Co-operative Data Clustering algorithm and the Cooperative 
@@ -138,11 +138,11 @@ bounds according to the dimension being initialized was added. A method to set t
 was implemented. 
 
 
-# XML
+# XML Examples
 
 ## Standard Data Clustering PSO
 
-The dataset is provided to the algorithm as the sourceURL. A sliding window is created(there 
+The dataset is provided to the algorithm as the sourceURL. A sliding window is created (there 
 is a default sliding window so it is not necessary). The StandardDataClusteringIterationStrategy is used
 for a standard data clustering PSO. If a boundary constraint is required, it is added as the delegate of 
 CentroidBoundaryConstraint. The initialization strategy must be the DataDependantPopulationInitializationStrategy
@@ -233,6 +233,7 @@ Create a normal data clustering PSO as described above. Set the window size and 
 clustering PSOs to the muli-population algorithm, where n is the number of clusters required.
 
 XML:
+
     <algorithm id="multiPopulationPSO" class="pso.multiswarm.MultiSwarm">
         <multiSwarmIterationStrategy class="pso.multiswarm.StandardClusteringMultiSwarmIterationStrategy"/>
         <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="6000"/>
@@ -259,13 +260,13 @@ XML:
         <addPopulationBasedAlgorithm idref="clusteringPSO"/>
     </algorithm>
 
-## To set the problem
+## Specifying the problem
 
 XML:
 
-<problems>
-    <problem id="quantization" class="problem.QuantizationErrorMinimizationProblem" domain="R(-10:10)"/>
-</problems>
+    <problems>
+        <problem id="quantization" class="problem.QuantizationErrorMinimizationProblem" domain="R(-10:10)"/>
+    </problems>
 
 ## Measurements:
 
@@ -287,28 +288,6 @@ XML:
         <addMeasurement class="measurement.clustervalidity.RayTuriValidityIndex"/>
         <addMeasurement class="measurement.single.Fitness"/>
     </measurements>
-
-
-#### After
-Java:
-
-    StoppingCondition sc = new MeasuredStoppingCondition(new Iterations(), new Maximum(), 2000);
-
-    StoppingCondition sc = new MaintainedStoppingCondition(new MeasuredStoppingCondition(new Diversity(), new Minimum(), 0.01), 20);
-
-XML:
-
-    <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="2000">
-        <measurement class="measurement.generic.Iterations"/>
-        <objective class="stoppingcondition.Maximum/>"
-    </addStoppingCondition>
-
-    <addStoppingCondition class="stoppingcondition.MaintainedStoppingCondition" consecutiveIterations="20">
-        <condition class="stoppingcondition.MeasuredStoppingCondition" target="0.01">
-            <measurement class="measurement.single.diversity.Diversity"/>
-            <objective class="stoppingcondition.Minimum/>"
-        </condition>
-    </addStoppingCondition>
 
 
 If there are any questions join us on [irc chat](http://webchat.freenode.net/?channels=cilib).
