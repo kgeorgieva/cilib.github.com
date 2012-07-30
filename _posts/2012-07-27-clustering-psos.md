@@ -95,7 +95,7 @@ ReinitializingDataClusteringIterationStrategy and the StandardDataClusteringIter
 - ClusteringMultiSwarmIterationStrategy: The multi-swarm iteration strategy designed to handle
 a clustering problem where the solution is a CentroidHolder, not a Vector. 
 
-## Cooperative PSO
+## Cooperative Data Clustering PSO
 
 - CooperativePSO: the cooperative PSO algorithm
 		
@@ -199,7 +199,7 @@ XML:
         </initialisationStrategy>
     </algorithm>
 
-## Cooperative PSO
+## Cooperative Data Clustering PSO
 Use the same xml shown above to create a Standard Data Clustering PSO. Then add this PSO to the cooperative PSO n times, 
 where n is the number of clusters required (i.e. the dimensions).  An example is shown below for 3 clusters:
 
@@ -213,7 +213,7 @@ XML:
         <addPopulationBasedAlgorithm idref="clusteringPSO"/>
     </algorithm>
 
-## Cooperative context re-initializing PSO
+## Cooperative Context Re-initializing Data Clustering PSO
 This is the same as the cooperative pso, but the re-initializing version. The standard data clustering 
 algorithm is setup normally, but it's sliding window is set to slide by adding a frequency and window size.
 
@@ -228,7 +228,7 @@ XML:
     </algorithm>
 
 
-## Multi-swarm PSO
+## Multi-swarm Data Clustering PSO
 Create a normal data clustering PSO as described above. Set the window size and frequency. Add n of these standard
 clustering PSOs to the muli-population algorithm, where n is the number of clusters required.
 
@@ -242,7 +242,7 @@ XML:
         <addPopulationBasedAlgorithm idref="clusteringPSO"/>
     </algorithm>
 
-## Cooperative Multi-swarm PSO
+## Cooperative Multi-swarm Data Clustering PSO
 Create a normal data clustering PSO as described above. Set the window size and frequency. Add n + 1 of these standard
 clustering PSOs to the muli-population algorithm, where n is the number of clusters required. The +1 is there because
 we need an explorer swarm as the weakest swarm is reinitialised by the algorithm if all have converged.
