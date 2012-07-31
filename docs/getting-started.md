@@ -22,7 +22,7 @@ User documentation describes how to use CIlib to run simulations.
 
 Developer's documentation describes how to change and contribute to CIlib.
 
-- [Getting started for developers](getting-started.html)
+- [Getting started for developers](idev/getting-started.html)
 - IDEs and editors
     * [Netbeans](netbeans.html)
     * Eclipse

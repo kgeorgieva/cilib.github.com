@@ -7,7 +7,7 @@ description: ""
 
 Developer's documentation describes how to change and contribute to CIlib.
 
-- [Getting started](dev/getting-started.html)
+- [Getting started](getting-started.html)
 - IDEs
     * [Netbeans](netbeans.html)
     * Eclipse
