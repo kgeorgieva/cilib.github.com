@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "Existing Users"
+title: "Moving to SBT: A Guide for Existing Users"
 description: ""
 ---
 {% include JB/setup %}
 
 Current users of CIlib will notice that CIlib has been 
 [split into two parts](/2012/07/16/removal-of-simulator-scripts/index.html):
-the library, containing all the algorithms, probelms, etc., and the simulator, 
+the library, containing all the algorithms, problems, etc., and the simulator, 
 containing all simulation related code.
 
 This means that a number of things change with regards to the location of files
