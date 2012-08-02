@@ -1,0 +1,6 @@
+/* Page header tweaks */
+.page-header {
+  background-image: url('/images/logo_small.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+}
