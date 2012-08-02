@@ -30,7 +30,7 @@ Developer's documentation describes how to change and contribute to CIlib.
     * IDEA
     * Emacs
 - Contributing to CIlib (best practices and workflow)
-- Developing on Windows
+- [Developing on Windows](dev/windows-configurations.html)
 - CIlib architecture
 
 ### [Cookbook](cookbook/index.html)
