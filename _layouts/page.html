@@ -1,5 +1,19 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/twitter/page.html %}
+<div class="page-header">
+  <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    {{ content }}
+  </div>
+  <div class="span4">
+    <div class="hr"><hr /></div>
+    {% include recent-posts.html %}
+    <div class="hr"><hr /></div>
+    {% include side-menu.html %}
+    <div class="hr"><hr /></div>
+  </div>
+</div>

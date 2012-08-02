@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: page
 title: "Clustering PSO Algorithms"
 description: ""
-category: updates
+group: "user-docs"
 tags: [code, master, changes, clustering, pso]
 ---
 {% include JB/setup %}

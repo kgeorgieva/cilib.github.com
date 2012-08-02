@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: docs
 title: "Moving to SBT: A Guide for Existing Users"
-description: ""
+group: "docs"
 ---
 {% include JB/setup %}
 

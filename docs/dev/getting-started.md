@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Getting Started for Developers"
+group: "dev-docs"
 description: ""
 ---
 {% include JB/setup %}

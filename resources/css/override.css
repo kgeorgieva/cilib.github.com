@@ -4,3 +4,8 @@
   background-repeat: no-repeat;
   background-position: right center;
 }
+
+.hr {
+  width: 90%;
+  height: 5px;
+}
