@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Clustering PSO Algorithms"
 description: ""
 group: "user-docs"

@@ -9,3 +9,8 @@
   width: 90%;
   height: 5px;
 }
+
+li.active {
+  font-weight:bold;
+  list-style-type: circle;
+}

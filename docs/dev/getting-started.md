@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Getting Started for Developers"
 group: "dev-docs"
 description: ""
