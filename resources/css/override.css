@@ -4,3 +4,17 @@
   background-repeat: no-repeat;
   background-position: right center;
 }
+
+/* This prevents <code> tags from overlapping with lines of text above and below */
+code {
+ color: #022;
+ color: #252;
+ padding: 1px;
+ padding-top: 0px;
+}
+
+pre code {
+ color: #252;
+ padding: 1px;
+ padding-top: 0px;
+}
