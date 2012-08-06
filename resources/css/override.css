@@ -2,5 +2,25 @@
 .page-header {
   background-image: url('/images/logo_small.png');
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right center; 
+}
+
+/* This will prevent long page titles to overlap with the logo */
+.page-header .title {
+  width: 73%;
+}
+
+.hr {
+  width: 90%;
+  height: 5px;
+}
+
+li.active {
+  font-weight: bold;
+  list-style-type: circle;
+}
+
+li .date {
+  font-weight: normal;
+  color: #AAA;
 }

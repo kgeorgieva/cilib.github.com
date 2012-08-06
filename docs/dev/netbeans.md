@@ -1,6 +1,7 @@
 ---
-layout: page
+layout: docs
 title: "Netbeans"
+group: "dev-docs"
 description: ""
 ---
 {% include JB/setup %}

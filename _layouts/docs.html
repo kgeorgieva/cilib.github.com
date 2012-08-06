@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="page-header">
+  <h1><div class="title">{{ page.title }}</div> {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    {{ content }}
+  </div>
+  <div class="span4">
+    {% include side-menu-docs.html %}
+    <div class="hr"><hr /></div>
+  </div>
+</div>

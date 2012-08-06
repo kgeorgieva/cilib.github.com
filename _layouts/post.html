@@ -1,5 +1,32 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/twitter/post.html %}
+<!--{% include JB/setup %}
+{% include themes/twitter/post.html %}-->
+<div class="page-header">
+  <h1><div class="title">{{ page.title }}</div> {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    {{ content }}
+  </div>
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
+
+    {% unless page.tags == empty %}
+      <h4>Tags</h4>
+      <ul class="tag_box">
+      {% assign tags_list = page.tags %}
+      {% include JB/tags_list %}
+      </ul>
+    {% endunless %}
+    <hr />
+    {% assign posts_collate = site.posts %}
+    {% include side-menu-posts.html %}
+    <div class="hr"><hr /></div>
+  </div>
+</div>
+
+

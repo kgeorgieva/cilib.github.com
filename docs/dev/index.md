@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Developer's Documentation"
 description: ""
 ---

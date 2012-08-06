@@ -1,0 +1,38 @@
+  <h3>Archive:</h3>
+  {% for post in posts_collate  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+    {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
+  
+    {% if forloop.first %}
+      <h3>{{this_year}}</h3>
+      <h4>{{this_month}}</h4>
+      <ul>
+    {% endif %}
+  
+    {% if page.url == post.url %}
+      <li class="active"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a><br /><div class="date">{{ post.date | date: "%B %e, %Y" }}</div></li>
+    {% else %}
+      <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a><br /><div class="date">{{ post.date | date: "%B %e, %Y" }}</div></li>
+    {% endif %}
+
+    {% if forloop.last %}
+      </ul>
+    {% else %}
+      {% if this_year != next_year %}
+        </ul>
+        <h3>{{next_year}}</h3>
+        <h4>{{next_month}}</h4>
+        <ul>
+      {% else %}    
+        {% if this_month != next_month %}
+          </ul>
+          <h4>{{next_month}}</h4>
+          <ul>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+{% assign posts_collate = nil %}
