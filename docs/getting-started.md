@@ -32,6 +32,7 @@ Developer's documentation describes how to change and contribute to CIlib.
 - Contributing to CIlib (best practices and workflow)
 - [Developing on Windows](dev/windows-configurations.html)
 - CIlib architecture
+- [Developing the CILib Website](dev/website-configuration.html)
 
 ### [Cookbook](cookbook/index.html)
 

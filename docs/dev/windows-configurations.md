@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Windows Configuration"
+title: "Getting Started Windows"
+group: "dev-docs"
 description: ""
 category: updates
 tags: [cilib, configuration, git, sbt, ruby, jekyll, windows]
@@ -54,52 +55,7 @@ Add the CIlib repository as an upstream remote repository:
 
 One possibly useful link: [Stack Overflow post](http://stackoverflow.com/questions/67699/how-do-i-clone-all-remote-branches-with-git)
 
-
-### Using Git
-
-To create branch based on another, checkout the branch that you need as a base:
-
-    git branch newBranch
-
-To checkout a branch:
-
-    git checkout branchName
-
-To see list of branches:
-
-    git branch
-
-To see modified untracked files:
-
-    git status
-
-To add a change:
-
-    git add <path>
-
-To remove change:
-
-    git rm <path>
-
-To commit changes:
-
-    git commit
-
-- Add description of changes.
-- To save press Esc and type ":x" to save and exit VIM.
-
-To push changes to repository"
-
-    git push origin branchName
-
-- Git will ask for your github.com password.
-
-To fetch changes from origin:
-
-    git checkout master
-    git fetch upstream
-    git merge upstream/master
-
+For instructions on how to use Git you may access the [documentation](http://git-scm.com/documentation)
 
 ## Netbeans and Scala plugin
 
@@ -155,6 +111,13 @@ Use the following to build the project
 
     sbt assembly
 
+Follow the instructions described in Step 4 [here](http://cilib.net/docs/dev/getting-started.html). 
+Note that the instructions are for linux, so replace simulator.sh with simulator.bat.
+Note that the command line instruction "export" is for linux users, the windows user may set the
+path environment variable if they want.  The "chmod" and "export" instructions are not necessary,
+unless the user wants to be able to call simulator.bat from any folder in the computer, so one
+may skip this.
+
 Use the following to run simulations, where xml has the configuration of the experiments:
 
     simulator.bat simulator/xml/ga.xml
@@ -162,47 +125,5 @@ Use the following to run simulations, where xml has the configuration of the exp
 Follow the instructions listed in Step 4 found at: 
 [Getting Started](http://cilib.net/2012/07/18/netbeans-cilib-and-sbt/).
 
-## For development of the CILib Website
-
-### Install Ruby and Ruby Development Kit
-Download and install the latest version of Ruby from: [Ruby](http://rubyinstaller.org/downloads/).
-
-Download and install the latest version of DevKit from: [Ruby](http://rubyinstaller.org/downloads/).
-
-Right click on Computer > Properties > Advanced System Settings > Environment Variables and
-add the path the \bin directories of both, Ruby and DevKit, to your PATH variable (in windows
-the different paths are separated by a semicolon ";").
-
-Open command line, navigate to the directory of the Ruby Development kit and type:
-
-    ruby dk.rb init
-    ruby dk.rb install
-
-
-### Install Rdiscount
-To install this type the following into command line:
-
-    gem install -p http://username:password@proxy:port rdiscount
-
-
-### Install Jekyll
-If ruby has been installed correctly, then typing the following into command line will install jekyll:
-
-    gem install -p http://username:password@proxy:port jekyll
-
-
-### Build
-To build the site navigate to the site's file location and type:
-
-    rake preview
-
-You may also use:
-
-    jekyll --server
-
-### To View
-To view the site open your browser and navigate to:
-
-    http://localhost:4000
 
 If there are any questions join us on [irc chat](http://webchat.freenode.net/?channels=cilib).

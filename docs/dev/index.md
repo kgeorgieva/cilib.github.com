@@ -13,5 +13,6 @@ Developer's documentation describes how to change and contribute to CIlib.
     * Eclipse
     * IDEA
 - Contributing to CIlib (best practices and workflow)
-- Developing on Windows
+- [Developing on Windows](windows-configurations.html)
 - CIlib architecture
+- [Developing the CILib Website](website-configuration.html)

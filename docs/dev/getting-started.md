@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: "Getting Started for Developers"
+title: "Getting Started in Linux"
 group: "dev-docs"
 description: ""
 ---
