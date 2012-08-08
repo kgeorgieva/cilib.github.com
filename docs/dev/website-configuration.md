@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: docs
 title: "Getting Started on the CILib Website"
 group: "dev-docs"
 description: ""

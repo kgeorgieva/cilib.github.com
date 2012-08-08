@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: docs
 title: "Getting Started in Windows"
 group: "dev-docs"
 description: ""
