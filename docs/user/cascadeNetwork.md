@@ -25,15 +25,15 @@ The cascade network can be trained by a PSO. However, this is still under invest
 Neuron has an amount of weights equal to the number of neurons before it in the hidden layer, plus
 the size of the input layer.
 
-- CascadeArchitectureBuilder: an ArchitectureBuilder that builds cascade network. It makes use
-of a standard feedforward configuration (with one input layer,one hidden layer and one output layer),
+- CascadeArchitectureBuilder: an ArchitectureBuilder that builds cascade networks. It makes use
+of a standard feedforward configuration (with one input layer, one hidden layer and one output layer),
 except that it uses CascadeLayerBuilder to construct a cascading hidden layer. It also ensures that
 only the input layer contains a bias unit (since both the hidden and output layer will have access
 to all the neurons in the input layer).
 
 - CascadeVisitor: an ArchitectureOperationVisitor that propagates inputs in a cascading fashion.
 It constructs a consolidated Layer by adding all the Neurons of the input layer (in order) and then
-adding all of the Neuron of the hidden layer (in order). This consolidated layer is then used as
+adding all of the Neurons of the hidden layer (in order). This consolidated layer is then used as
 input for both the hidden layer and the output layer. Since each Neuron, receiving this input,
 only has a number of weights corresponding to the number of inputs it should receive, each Neuron
 will only use the inputs relevant to it.
@@ -48,7 +48,7 @@ particles. It adds one new dimension, for each weight, to the particles' vectors
 corresponding to the new weights. These new dimensions are given an initial value of "Not a Number"
 to indicate that they need to be initialised by another EnvironmentChangeResponseStrategy.
 
-- InitialiseNaNElements: a EnvironmentChangeResponseStrategy that initialises any dimensions within
+- InitialiseNaNElements: an EnvironmentChangeResponseStrategy that initialises any dimensions within
 particles that hold the value "Not a Number". Elements in the particle's position vector are randomly
 initialised within that dimension's boundaries. Elements in the particle's best position vector are
 set to the same value of the corresponding element in the position vector. Elements in the velocity
@@ -109,7 +109,7 @@ Multiple responses are used:
 the first expands the cascade network,
 the second initialises the new uninitialised weights,
 and the third reevaluates all the particles.
-Algorithm stops execution after a hundred iterations.
+Algorithm stops execution after one hundred iterations.
 
 XML:
 
