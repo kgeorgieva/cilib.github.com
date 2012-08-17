@@ -3,7 +3,7 @@ layout: docs
 title: "Cascade Neural Network Architecture"
 description: ""
 group: "user-docs"
-tags: [code, master, changes, clustering, pso]
+tags: [neural network, cascade network, pso]
 ---
 {% include JB/setup %}
 
