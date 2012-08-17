@@ -1,19 +1,19 @@
 <h3>Documentation:</h3>
 <h4>General</h4>
 <ul>
-  {% assign menu-items = site.pages | sort {|a,b| a.data['title'] <=> b.data['title'] } %}
+  {% assign menu-items = site.pages %}
   {% assign group = 'docs' %}
   {% include menu-items.html %}
 </ul>
 <h4>User Documentation</h4>
 <ul>
-  {% assign menu-items = site.pages | sort {|a,b| a.data['title'] <=> b.data['title'] } %}
+  {% assign menu-items = site.pages %}
   {% assign group = 'user-docs' %}
   {% include menu-items.html %}
 </ul>
 <h4>Developer Documentation</h4>
 <ul>
-  {% assign menu-items = site.pages | sort {|a,b| a.data['title'] <=> b.data['title'] } %}
+  {% assign menu-items = site.pages %}
   {% assign group = 'dev-docs' %}
   {% include menu-items.html %}
 </ul>
