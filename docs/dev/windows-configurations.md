@@ -1,6 +1,6 @@
 ---
-layout: post
-title: "Getting Started Windows"
+layout: docs
+title: "Getting Started in Windows"
 group: "dev-docs"
 description: ""
 category: updates
