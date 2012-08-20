@@ -54,6 +54,12 @@ initialised within that dimension's boundaries. Elements in the particle's best 
 set to the same value of the corresponding element in the position vector. Elements in the velocity
 vector are set to zero.
 
+- ReinitialiseCascadeNetworkOutputWeightsReactionStrategy: an EnvironmentChangeResponseStrategy
+that reinitialises the any dimensions within the particles that correspond to the output weights
+of a cascade network. Elements in the particle's position vector are randomly initialised within
+that dimension's boundaries. Elements in the particle's best position vector are left as is.
+Elements in the velocity vector are set to zero.
+
 - ReevaluationReactionStrategy: an EnvironmentChangeResponseStrategy that reevaluates the fitness of
 all the particles.
 
@@ -108,7 +114,8 @@ Detection strategy is set to trigger every ten iterations.
 Multiple responses are used:
 the first expands the cascade network,
 the second initialises the new uninitialised weights,
-and the third reevaluates all the particles.
+the third reinitialises all the weights of the output units,
+and the fourth reevaluates all the particles.
 Algorithm stops execution after one hundred iterations.
 
 XML:
@@ -125,6 +132,7 @@ XML:
 				<responseStrategy class="pso.dynamic.responsestrategies.MultiReactionStrategy">
 					<addResponseStrategy class="pso.dynamic.responsestrategies.CascadeNetworkExpansionReactionStrategy"/>
 					<addResponseStrategy class="pso.dynamic.responsestrategies.InitialiseNaNElementsReactionStrategy"/>
+					<addResponseStrategy class="pso.dynamic.responsestrategies.ReinitialiseCascadeNetworkOutputWeightsReactionStrategy"/>
 					<addResponseStrategy class="pso.dynamic.responsestrategies.ReevaluationReactionStrategy" reevaluationRatio="1.0"/>
 				</responseStrategy>
 			</iterationStrategy>
