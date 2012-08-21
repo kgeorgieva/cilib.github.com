@@ -55,7 +55,7 @@ set to the same value of the corresponding element in the position vector. Eleme
 vector are set to zero.
 
 - ReinitialiseCascadeNetworkOutputWeightsReactionStrategy: an EnvironmentChangeResponseStrategy
-that reinitialises the any dimensions within the particles that correspond to the output weights
+that reinitialises any dimensions within the particles that correspond to the output weights
 of a cascade network. Elements in the particle's position vector are randomly initialised within
 that dimension's boundaries. Elements in the particle's best position vector are left as is.
 Elements in the velocity vector are set to zero.
