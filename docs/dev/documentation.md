@@ -21,13 +21,13 @@ The introduction should be the first body of text on the page, giving a short ov
 This section should describe the possible configurations that can be achieved with Cilib. For example, this section of the standard PSO documentation should include the use of synchronous and asynchronous iteration strategies.
 
 * #### Implementation Details
-In this section, a short description of the relevan classes should be given. Avoid overly complicated explanations. Simply state the name and purpose of each class.
+In this section, a short description of the relevant classes should be given. Avoid overly complicated explanations. Simply state the name and purpose of each class.
 
 * #### [Optional] Additional Sections
 If you require further sections to clarify the use of your code, additional sections may be added here.
 
 * #### XML Examples
-finally, provide at least one XML example to show how to construct a configuration using the implementation described in your documentation.
+Finally, provide at least one XML example to show how to construct a configuration using the implementation described in your documentation.
 
 ## Creating Your Documentation Pages
 
@@ -79,4 +79,4 @@ The following code is a skeleton template for documentation pages. Place this co
 			    </an xml>
 			</this is>
 
-For more examples, have alook at the documentation pages already in `docs/user`.
+For more examples, take a look at the documentation pages already in `docs/user`.
