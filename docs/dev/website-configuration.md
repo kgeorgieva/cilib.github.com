@@ -1,6 +1,6 @@
 ---
-layout: post
-title: "Getting Started on the CILib Website"
+layout: docs
+title: "Getting Started on the Cilib Website"
 group: "dev-docs"
 description: ""
 category: updates
@@ -11,7 +11,7 @@ tags: [cilib, configuration, git, sbt, ruby, jekyll, windows]
 This document describes how to configure all the software required to develop the 
 CILib website in Windows 7.
 
-## Configuration for development of the CILib Website
+## Configuration for development of the Cilib Website
 
 ### Install Ruby and Ruby Development Kit
 Download and install the latest version of Ruby from: [Ruby](http://rubyinstaller.org/downloads/).

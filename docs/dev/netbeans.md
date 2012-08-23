@@ -1,15 +1,13 @@
 ---
 layout: docs
-title: "Netbeans"
+title: "Developing Cilib with Netbeans"
 group: "dev-docs"
 description: ""
 ---
 {% include JB/setup %}
 
 This is a step-by-step guide to using Netbeans as your IDE for developing CIlib.
-It is assumed that the [Getting started](getting-started.html) guide was followed
-and is working.
-
+It is assumed that the getting started guide for either [Linux](getting-started.html) or [Windows](windows-configurations.html) was followed and is working.
 
 ### Step 1: Get the Netbeans Scala plugin
 
