@@ -34,8 +34,11 @@ To use the Self-adaptive Trial Vector creation strategy described by Qin and Sug
 iterationStrategy must be given SaDECreationStrategy as the class of the trialVectorCreationStrategy.
 
 XML:
-
-    <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+    <algorithm id="de" class="ec.EC">
+        <iterationStrategy class="ec.iterationstrategies.DifferentialEvolutionIterationStrategy">
+            <trialVectorCreationStrategy class="entity.operators.creation.SaDECreationStrategy"/>
+        </iterationStrategy> 
+    </algorithm>
 
 
 
