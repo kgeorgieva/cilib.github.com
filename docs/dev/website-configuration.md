@@ -19,7 +19,7 @@ Download and install the latest version of Ruby from: [Ruby](http://rubyinstalle
 Download and install the latest version of DevKit from: [Ruby](http://rubyinstaller.org/downloads/).
 
 Right click on Computer > Properties > Advanced System Settings > Environment Variables and
-add the path fir the \bin directories of both, Ruby and DevKit, to your PATH variable (in windows
+add the path for the \bin directories of both, Ruby and DevKit, to your PATH variable (in windows
 the different paths are separated by a semicolon ";").
 
 Open command line, navigate to the directory of the Ruby Development kit and type:
@@ -33,12 +33,20 @@ To install this type the following into command line:
 
     gem install -p http://username:password@proxy:port rdiscount
 
+Note: This is if you are working through a proxy. If you are not working through a proxy, remove "http://username:password@proxy:port" from the above command
 
 ### Install Jekyll
 If ruby has been installed correctly, then typing the following into command line will install jekyll:
 
     gem install -p http://username:password@proxy:port jekyll
 
+Note: This is if you are working through a proxy. If you are not working through a proxy, remove "http://username:password@proxy:port" from the above command
+
+### Clone the Repository
+This is the same process as cloning the CILib repository:
+
+    git clone URLFromGitHub nameOfFolderToCloneTo
+    git remote add upstream https://github.com/cilib/cilib.github.com.git
 
 ### Build
 To build the site navigate to the site's file location and type:
