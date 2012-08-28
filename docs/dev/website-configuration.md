@@ -33,14 +33,14 @@ To install this type the following into command line:
 
     gem install -p http://username:password@proxy:port rdiscount
 
-Note: This is if you are working through a proxy. If you are not working through a proxy, remove "http://username:password@proxy:port" from the above command
+Note: This is if you are working through a proxy. If you are not working through a proxy, remove "-p http://username:password@proxy:port" from the above command
 
 ### Install Jekyll
 If ruby has been installed correctly, then typing the following into command line will install jekyll:
 
     gem install -p http://username:password@proxy:port jekyll
 
-Note: This is if you are working through a proxy. If you are not working through a proxy, remove "http://username:password@proxy:port" from the above command
+Note: This is if you are working through a proxy. If you are not working through a proxy, remove "-p http://username:password@proxy:port" from the above command
 
 ### Clone the Repository
 This is the same process as cloning the CILib repository:
