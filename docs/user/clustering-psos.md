@@ -122,6 +122,14 @@ is called the explorer swarm as it explores the environment.
 each simulation to the final text file. Note CILib allows for one to output vectors but CIDA does not 
 know how to handle them. I have created my own program to average the centroid positions and the 
 fitness values and output them to a file.
+
+- ChangeDetectionStrategy: This is an abstract class holding the getClone() and detectChange methods that
+must be implemented for each change detection strategy. A change detection strategy being a class that
+determines whether a change has occurred in the dataset.
+
+- IterationBasedChangeDetectionStrategy: This is a change detection strategy that is based on the number
+iterations that have been completed. The user sets the iterationOfChange parameter to the frequency of change
+and if iterationOfChange number of iterations have passed since the previous change, then a change has occurred.
 			
 - Validity Indexes:
 
@@ -174,17 +182,22 @@ XML:
 
 ## Reinitializing Data Clustering PSO
 Here there are two changes. One is the iteration strategy being used: ReinitializingDataClusteringIterationStrategy.
-The second difference is seen by the sliding window. Here, because we are now using a dynamic problem, a frequency 
+The second difference is seen by the sliding window. Here, because we are now using a dynamic problem, a sliding frequency 
 of 2000 is set when the total iterations are 6000. This means that the window will in the end have been over 3 
 different time-steps. The window size is 30 because the dataset is of size 90. So during the first 2000 iterations
-30 of the data patterns will be used, at the 2000th iteration, the window slides to the next 30.
+30 of the data patterns will be used, at the 2000th iteration, the window slides to the next 30. 
+A change detection strategy is used in order to inform the algorithm when a change has occurred so that the
+the re-initialization can take place. Its iterationOfChange parameter is set to how frequently a change occurs, in
+this case a change takes place every 2000 iterations.
+
 
 XML:
 
     <algorithm id="clusteringPSO" class="clustering.DataClusteringPSO" sourceURL="src/test/resources/datasets/clusters.arff">
         <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="6000"/>
-        <window class="clustering.SlidingWindow" windowSize="30" frequency="2000"/>
+        <window class="clustering.SlidingWindow" windowSize="30" slideFrequency="2000"/>
         <iterationStrategy class="clustering.iterationstrategies.ReinitializingDataClusteringIterationStrategy">
+            <changeDetectionStrategy class="util.changeDetection.IterationBasedChangeDetectionStrategy" iterationOfChange = "2000"/>
             <boundaryConstraint class="problem.boundaryconstraint.CentroidBoundaryConstraint">
                 <delegate class="problem.boundaryconstraint.ClampingBoundaryConstraint"/>
             </boundaryConstraint>
@@ -215,12 +228,17 @@ XML:
 
 ## Cooperative Context Re-initializing Data Clustering PSO
 This is the same as the cooperative pso, but the re-initializing version. The standard data clustering 
-algorithm is setup normally, but it's sliding window is set to slide by adding a frequency and window size.
+algorithm is setup normally, but it's sliding window is set to slide by adding a sliding frequency and window size.
+A change detection strategy is used in order to inform the algorithm when a change has occurred so that the
+the re-initialization can take place. Its iterationOfChange parameter is set to how frequently a change occurs, in
+this case a change takes place every 2000 iterations.
 
 XML:
 
     <algorithm id="multiPopulationPSO" class="clustering.CooperativePSO">
-        <iterationStrategy class="clustering.iterationstrategies.DynamicCooperativeDataClusteringPSOIterationStrategy"/>
+        <iterationStrategy class="clustering.iterationstrategies.DynamicCooperativeDataClusteringPSOIterationStrategy">
+            <changeDetectionStrategy class="util.changeDetection.IterationBasedChangeDetectionStrategy" iterationOfChange = "2000"/>
+        </iterationStrategy>
         <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="6000"/>
         <addPopulationBasedAlgorithm idref="clusteringPSO"/>
         <addPopulationBasedAlgorithm idref="clusteringPSO"/>
@@ -229,7 +247,7 @@ XML:
 
 
 ## Multi-swarm Data Clustering PSO
-Create a normal data clustering PSO as described above. Set the window size and frequency. Add n of these standard
+Create a normal data clustering PSO as described above. Set the window size and sliding frequency. Add n of these standard
 clustering PSOs to the muli-population algorithm, where n is the number of clusters required.
 
 XML:
@@ -243,7 +261,7 @@ XML:
     </algorithm>
 
 ## Cooperative Multi-swarm Data Clustering PSO
-Create a normal data clustering PSO as described above. Set the window size and frequency. Add n + 1 of these standard
+Create a normal data clustering PSO as described above. Set the window size and sliding frequency. Add n + 1 of these standard
 clustering PSOs to the muli-population algorithm, where n is the number of clusters required. The +1 is there because
 we need an explorer swarm as the weakest swarm is reinitialised by the algorithm if all have converged.
 
