@@ -127,7 +127,7 @@ fitness values and output them to a file.
 must be implemented for each change detection strategy. A change detection strategy being a class that
 determines whether a change has occurred in the dataset.
 
-- IterationBasedChangeDetectionStrategy: This is a change detection strategy that is based on the number
+- IterationBasedChangeDetectionStrategy: This is a change detection strategy that is based on the number of
 iterations that have been completed. The user sets the iterationModulus parameter to the frequency of change
 and if iterationModulus number of iterations have passed since the previous change, then a change has occurred.
 			
