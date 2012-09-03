@@ -128,8 +128,8 @@ must be implemented for each change detection strategy. A change detection strat
 determines whether a change has occurred in the dataset.
 
 - IterationBasedChangeDetectionStrategy: This is a change detection strategy that is based on the number
-iterations that have been completed. The user sets the iterationOfChange parameter to the frequency of change
-and if iterationOfChange number of iterations have passed since the previous change, then a change has occurred.
+iterations that have been completed. The user sets the iterationModulus parameter to the frequency of change
+and if iterationModulus number of iterations have passed since the previous change, then a change has occurred.
 			
 - Validity Indexes:
 
@@ -187,7 +187,7 @@ of 2000 is set when the total iterations are 6000. This means that the window wi
 different time-steps. The window size is 30 because the dataset is of size 90. So during the first 2000 iterations
 30 of the data patterns will be used, at the 2000th iteration, the window slides to the next 30. 
 A change detection strategy is used in order to inform the algorithm when a change has occurred so that the
-the re-initialization can take place. Its iterationOfChange parameter is set to how frequently a change occurs, in
+the re-initialization can take place. Its iterationModulus parameter is set to how frequently a change occurs, in
 this case a change takes place every 2000 iterations.
 
 
@@ -197,7 +197,7 @@ XML:
         <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="6000"/>
         <window class="clustering.SlidingWindow" windowSize="30" slideFrequency="2000"/>
         <iterationStrategy class="clustering.iterationstrategies.ReinitializingDataClusteringIterationStrategy">
-            <changeDetectionStrategy class="util.changeDetection.IterationBasedChangeDetectionStrategy" iterationOfChange = "2000"/>
+            <changeDetectionStrategy class="util.changeDetection.IterationBasedChangeDetectionStrategy" iterationModulus = "2000"/>
             <boundaryConstraint class="problem.boundaryconstraint.CentroidBoundaryConstraint">
                 <delegate class="problem.boundaryconstraint.ClampingBoundaryConstraint"/>
             </boundaryConstraint>
@@ -230,14 +230,14 @@ XML:
 This is the same as the cooperative pso, but the re-initializing version. The standard data clustering 
 algorithm is setup normally, but it's sliding window is set to slide by adding a sliding frequency and window size.
 A change detection strategy is used in order to inform the algorithm when a change has occurred so that the
-the re-initialization can take place. Its iterationOfChange parameter is set to how frequently a change occurs, in
+the re-initialization can take place. Its iterationModulus parameter is set to how frequently a change occurs, in
 this case a change takes place every 2000 iterations.
 
 XML:
 
     <algorithm id="multiPopulationPSO" class="clustering.CooperativePSO">
         <iterationStrategy class="clustering.iterationstrategies.DynamicCooperativeDataClusteringPSOIterationStrategy">
-            <changeDetectionStrategy class="util.changeDetection.IterationBasedChangeDetectionStrategy" iterationOfChange = "2000"/>
+            <changeDetectionStrategy class="util.changeDetection.IterationBasedChangeDetectionStrategy" iterationModulus = "2000"/>
         </iterationStrategy>
         <addStoppingCondition class="stoppingcondition.MeasuredStoppingCondition" target="6000"/>
         <addPopulationBasedAlgorithm idref="clusteringPSO"/>

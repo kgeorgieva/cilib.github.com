@@ -31,16 +31,20 @@ Open command line, navigate to the directory of the Ruby Development kit and typ
 ### Install Rdiscount
 To install this type the following into command line:
 
-    gem install -p http://username:password@proxy:port rdiscount
+    gem install rdiscount
 
-Note: This is if you are working through a proxy. If you are not working through a proxy, remove "-p http://username:password@proxy:port" from the above command
+Note: If you are working through a proxy use the following command:
+
+    gem install -p http://username:password@proxy:port rdiscount
 
 ### Install Jekyll
 If ruby has been installed correctly, then typing the following into command line will install jekyll:
 
-    gem install -p http://username:password@proxy:port jekyll
+    gem install jekyll
 
-Note: This is if you are working through a proxy. If you are not working through a proxy, remove "-p http://username:password@proxy:port" from the above command
+Note: If you are working through a proxy use the following command:
+
+    gem install -p http://username:password@proxy:port jekyll
 
 ### Clone the Repository
 This is the same process as cloning the CILib repository:
